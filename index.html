@@ -4,13 +4,27 @@
   <meta charset='utf-8'>
 
   <title>mroth/foursquare-token-echo @ GitHub</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script>
+	$(document).ready(function() {
+    $('a').click( function(event) {
+      alert(document.location.hash);
+    });
+	});
+  </script>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-    }
-  </style>
+	<style type="text/css">
+  body {
+  	margin-top: 1.0em;
+	 	font-family: Helvetica, Arial, FreeSans, san-serif;
+	 }
+  #token {
+    font-size: 48px;
+    border: 1px solid grey;
+    padding: 10px;
+    width: 500px;
+	}
+	</style>
 </head>
 
 <body>
@@ -18,13 +32,13 @@
 
   <div id="container">
 
-    <h2>o hai</h2>
+    <h1>o hai</h1>
     <p>
-      ur token iz here:
+      ur foursquare user token iz here:
     </p>
+	<div id="token"> loading... </div>
+	<p>copy and paste it into the application that wants it, or whatever.</p>
 
   </div>
-
-  
 </body>
 </html>
