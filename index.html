@@ -7,9 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script>
 	$(document).ready(function() {
-    $('a').click( function(event) {
-      alert(document.location.hash);
-    });
+	  var reTokenHash = /^#access_token=(.+)$/;
+    var hash = document.location.hash;
+    
+    if (reTokenHash.test(hash)) {
+      var token = RegExp.$1;
+      $('#token').html(token);
+    } else {
+      $('#token').html('ERROR: TOKEN NOT IN HASH');
+    }
+    
 	});
   </script>
 
@@ -19,10 +26,15 @@
 	 	font-family: Helvetica, Arial, FreeSans, san-serif;
 	 }
   #token {
-    font-size: 48px;
-    border: 1px solid grey;
+    font-size: 24px;
     padding: 10px;
-    width: 500px;
+    color: green;
+	}
+	#container {
+	  width: 720px;
+	}
+	#token_form {
+	  font-size: 24;
 	}
 	</style>
 </head>
@@ -37,7 +49,7 @@
       ur foursquare user token iz here:
     </p>
 	<div id="token"> loading... </div>
-	<p>copy and paste it into the application that wants it, or whatever.</p>
+	<p>copy (⌘-C) and paste it into the application that wants it, or whatever.</p>
 
   </div>
 </body>
